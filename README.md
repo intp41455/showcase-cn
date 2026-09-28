@@ -4,11 +4,11 @@
 部署到国内节点后，HR / 国内访客可直接打开浏览（每个项目一键跳回 GitHub 源码）。
 **不要求在线运行，只做"都能看"的展示门面。**
 
-## 线上地址（国内直连 · 免备案）
-- 使用 EdgeOne Pages 标准版**默认分配的 `*.edgeone.app` 域名**（例如 `xxx.edgeone.app`）。
-  **该域名免备案、国内 CDN 加速、免费**，HR 直接打开即可浏览，无需任何自定义域名与 DNS 配置。
-- 部署方式：EdgeOne Pages 标准版，**连接 GitHub 仓库 `intp41455/showcase-cn`**，纯静态自动部署。
-- 默认地址在 EdgeOne Pages 控制台的项目页查看（项目仪表盘的「预览 / 访问地址」即为该 `*.edgeone.app` 链接）。
+## 线上地址（国内直连 · 免备案 · 长期有效）
+- **正式地址**：`https://showcase-cn-5egoqlia.edgeone.cool/`
+  （EdgeOne Pages 连接 `showcase-cn` 仓库后分配的默认域名；**国内 CDN 加速、免备案、免费、长期有效**。）
+- **注意**：首次部署后控制台弹出的带 `?eo_token=...` 预览链接**仅约 3 小时有效**，用于临时查看；给 HR/面试官请用上面不带 token 的正式地址。
+- 部署方式：EdgeOne Pages **连接 GitHub 仓库 `intp41455/showcase-cn`**，纯静态自动部署；push 到 `main` 自动触发重新部署。
 
 ## 包含的文件
 - `generate.py` —— 拉取公开仓库、自动分类并生成 `index.html`（可本地直接跑，无需 token）
