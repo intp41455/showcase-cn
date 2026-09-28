@@ -17,7 +17,7 @@ jobs:
         run: python generate.py
         env:
           GITHUB_USER: intp41455
-      - name: 有变更则提交
+      - name: 有变更则提交到 GitHub
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -28,4 +28,24 @@ jobs:
             git commit -m "chore: 自动同步作品集 $(date -u +%Y-%m-%d)"
             git push
           fi
-      # 若本仓库已连接 EdgeOne Pages，上面的 push 会自动触发重新部署（国内可访问）
+
+      # ---- 国内镜像：同步到 Gitee（供 Gitee Pages 部署，国内手机/电脑均可访问，免备案）----
+      - name: 同步 index.html 到 Gitee 仓库
+        if: ${{ secrets.GITEE_TOKEN != '' }}
+        env:
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+        run: python sync_gitee.py
+
+      # ---- 可选：触发 Gitee Pages 自动重新部署（实现真正全自动）----
+      # 需在 GitHub Secrets 配置 GITEE_USERNAME 和 GITEE_PASSWORD(=私人令牌)
+      # 并先在 Gitee 仓库「服务→Gitee Pages」手动启动一次（实名认证）
+      # 启用下面这段即可，否则 Gitee Pages 免费版需手动点「更新」
+      # - name: 触发 Gitee Pages 重新部署
+      #   if: ${{ secrets.GITEE_PASSWORD != '' }}
+      #   uses: gandli/gitee-pages-action@master
+      #   with:
+      #     gitee-username: intp41455
+      #     gitee-password: ${{ secrets.GITEE_PASSWORD }}
+      #     gitee-repo: showcase-cn
+      #     branch: master
+
