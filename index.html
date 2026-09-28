@@ -48,6 +48,163 @@
   footer { text-align:center; color:var(--muted); font-size:13px;
     padding:24px; }
   footer code { background:var(--line); padding:1px 6px; border-radius:4px; }
+
+  /* 旗舰代表作置顶专区高亮样式 */
+  .flagship-sec {
+    margin-bottom: 40px;
+  }
+  .flagship-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    border-left: 4px solid #f59e0b;
+    padding-left: 12px;
+  }
+  .flagship-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+    gap: 20px;
+  }
+  .flagship-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .flagship-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.10);
+  }
+  .flagship-card.incidentops {
+    border: 2px solid #3b82f6;
+    background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 28%);
+  }
+  .flagship-card.bonsai {
+    border: 2px solid #f59e0b;
+    background: linear-gradient(180deg, #fffbeb 0%, #ffffff 28%);
+  }
+  .flagship-top-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .top-pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    text-transform: uppercase;
+  }
+  .pill-blue { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+  .pill-amber { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+  .pill-green { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+  
+  .flagship-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .flagship-punchline {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: #374151;
+    margin-bottom: 16px;
+    flex: 1;
+  }
+  .flagship-chips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+    background: rgba(243, 244, 246, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+  }
+  .chip-item {
+    text-align: center;
+  }
+  .chip-label {
+    font-size: 11px;
+    color: #6b7280;
+    margin-bottom: 2px;
+    font-weight: 500;
+  }
+  .chip-val {
+    font-size: 13px;
+    font-weight: 700;
+    color: #111827;
+  }
+  .flagship-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .btn-primary-demo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #2563eb;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13.5px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+  }
+  .btn-primary-demo:hover {
+    background: #1d4ed8;
+  }
+  .btn-amber-demo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #d97706;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13.5px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+  }
+  .btn-amber-demo:hover {
+    background: #b45309;
+  }
+  .btn-secondary-gh {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f3f4f6;
+    color: #374151 !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13.5px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    transition: background 0.15s ease;
+  }
+  .btn-secondary-gh:hover {
+    background: #e5e7eb;
+    color: #111827 !important;
+  }
+
 </style>
 </head>
 <body>
@@ -57,6 +214,83 @@
   <p>源码仍在 <a href="https://github.com/intp41455" target="_blank" rel="noopener">github.com/intp41455</a>，本页自动同步</p>
 </header>
 <div class="wrap">
+
+    <!-- 旗舰核心标杆项目置顶专区 -->
+    <section class="flagship-sec">
+      <h2 class="flagship-title">⭐ 核心标杆代表作（旗舰工程 · 全量在线体验与开源）</h2>
+      <div class="flagship-grid">
+        
+        <!-- 旗舰 1: IncidentOps -->
+        <article class="flagship-card incidentops">
+          <div class="flagship-top-badge">
+            <span class="top-pill pill-blue">🔥 核心代表作</span>
+            <span class="top-pill pill-green">🤖 Multi-Agent 协同</span>
+            <span class="top-pill pill-blue">⚡ 在线可体验</span>
+          </div>
+          <div class="flagship-name">
+            <span>IncidentOps 企业级智能体自动运维排障协同平台</span>
+            <span class="badge" style="background:#2f6df6;font-size:12px;">Python / Next.js</span>
+          </div>
+          <p class="flagship-punchline">
+            <b>告别漫长繁琐的人工查日志！</b>首创三智能体分工协同（Planner 规划推演 / Specialist 探针诊断 / Verifier 规则合规），配合 MCP 协议与 Runbook 向量语义检索，将企业系统故障排查耗时（MTTR）从数小时急剧缩短至 <b>3 分钟以内</b>，实测准确率达 <b>94.2%</b>，高危系统恢复动作坚守人工审批防线（Human-in-the-Loop）。
+          </p>
+          <div class="flagship-chips">
+            <div class="chip-item">
+              <div class="chip-label">排障耗时 (MTTR)</div>
+              <div class="chip-val" style="color:#2563eb;">45min → 3min (降90%+)</div>
+            </div>
+            <div class="chip-item">
+              <div class="chip-label">G-Eval 实测准确率</div>
+              <div class="chip-val" style="color:#059669;">94.2% 达标率</div>
+            </div>
+            <div class="chip-item">
+              <div class="chip-label">生产越权安全写入</div>
+              <div class="chip-val" style="color:#111827;">绝对 0 越权 (熔断门禁)</div>
+            </div>
+          </div>
+          <div class="flagship-actions">
+            <a class="btn-primary-demo" href="https://incidentops.pages.dev/" target="_blank" rel="noopener">🌐 在线体验平台 →</a>
+            <a class="btn-secondary-gh" href="https://github.com/intp41455/incidentops-enterprise-agent" target="_blank" rel="noopener">📦 GitHub 源码</a>
+          </div>
+        </article>
+
+        <!-- 旗舰 2: Bonsai -->
+        <article class="flagship-card bonsai">
+          <div class="flagship-top-badge">
+            <span class="top-pill pill-amber">💎 极限算力压榨</span>
+            <span class="top-pill pill-green">⚡ 8GB 跑满 64k</span>
+            <span class="top-pill pill-amber">📖 全景技术文档</span>
+          </div>
+          <div class="flagship-name">
+            <span>Bonsai 本地大模型极限制推理网关与 64k 长上下文优化</span>
+            <span class="badge" style="background:#d97706;font-size:12px;">FastAPI / llama.cpp</span>
+          </div>
+          <p class="flagship-punchline">
+            <b>打破行业固有认知！</b>用一台普通的 8GB 笔记本显卡，极限承载 <b>27B 思考型大模型</b>并稳稳跑满 <b>64k（65,536 tokens）原生超长上下文</b>。在仅剩 120MB 显存的物理悬崖边缘，实现 <b>100% 生产级防崩</b>与 <b>18~20 token/s 极速推理</b>，彻底突破消费级硬件的落地天花板！
+          </p>
+          <div class="flagship-chips">
+            <div class="chip-item">
+              <div class="chip-label">显存极限压榨占用</div>
+              <div class="chip-val" style="color:#d97706;">7.88 GB (余量仅120MB)</div>
+            </div>
+            <div class="chip-item">
+              <div class="chip-label">超长输入防崩拦截率</div>
+              <div class="chip-val" style="color:#059669;">100.0% (0ms动态闸门)</div>
+            </div>
+            <div class="chip-item">
+              <div class="chip-label">长上下文纯GPU吞吐</div>
+              <div class="chip-val" style="color:#111827;">18.2 ~ 20.4 token/s</div>
+            </div>
+          </div>
+          <div class="flagship-actions">
+            <a class="btn-amber-demo" href="https://bonsai-optimization.pages.dev/" target="_blank" rel="noopener">📖 全景技术文档 →</a>
+            <a class="btn-secondary-gh" href="https://github.com/intp41455/bonsai-local-llm-optimization" target="_blank" rel="noopener">📦 GitHub 源码</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
 
     <section>
       <h2 class="sec-title">🚀 可交互 Web 应用 / 全栈 MVP<span class="count">12</span></h2>
