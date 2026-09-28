@@ -4,10 +4,11 @@
 部署到国内节点后，HR / 国内访客可直接打开浏览（每个项目一键跳回 GitHub 源码）。
 **不要求在线运行，只做"都能看"的展示门面。**
 
-## 线上地址（国内直连）
-- 正式域名：`https://projects.intp41455.com`
-  （自定义域名；尚未完成 DNS 绑定时，先用 EdgeOne Pages 默认分配的 `*.edgeone.app` 域名）
-- 部署方式：EdgeOne Pages 标准版，**连接 GitHub 仓库 `intp41455/showcase-cn`**，纯静态自动部署，国内 CDN 加速，免费。
+## 线上地址（国内直连 · 免备案）
+- 使用 EdgeOne Pages 标准版**默认分配的 `*.edgeone.app` 域名**（例如 `xxx.edgeone.app`）。
+  **该域名免备案、国内 CDN 加速、免费**，HR 直接打开即可浏览，无需任何自定义域名与 DNS 配置。
+- 部署方式：EdgeOne Pages 标准版，**连接 GitHub 仓库 `intp41455/showcase-cn`**，纯静态自动部署。
+- 默认地址在 EdgeOne Pages 控制台的项目页查看（项目仪表盘的「预览 / 访问地址」即为该 `*.edgeone.app` 链接）。
 
 ## 包含的文件
 - `generate.py` —— 拉取公开仓库、自动分类并生成 `index.html`（可本地直接跑，无需 token）
