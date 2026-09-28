@@ -205,7 +205,7 @@ def main():
 </div>
 <footer>
   本页由 <code>generate.py</code> 自动生成 · 最后同步：{generated}<br>
-  自动同步：GitHub Actions 每日刷新 / WorkBuddy 每周兜底
+  自动同步：GitHub Actions 每日刷新 → EdgeOne Pages 自动部署（零 token）
 </footer>
 </body>
 </html>"""
