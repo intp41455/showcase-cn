@@ -1,0 +1,31 @@
+name: 同步作品集
+on:
+  schedule:
+    - cron: "17 16 * * *"   # 每天 UTC 16:17 同步一次（避开整点）
+  workflow_dispatch:        # 允许手动触发
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: 重新生成 index.html
+        run: python generate.py
+        env:
+          GITHUB_USER: intp41455
+      - name: 有变更则提交
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "无变更，跳过"
+          else
+            git commit -m "chore: 自动同步作品集 $(date -u +%Y-%m-%d)"
+            git push
+          fi
+      # 若本仓库已连接 EdgeOne Pages，上面的 push 会自动触发重新部署（国内可访问）
